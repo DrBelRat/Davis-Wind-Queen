@@ -1,10 +1,11 @@
-version: "3"
+
 services:
   jupyter:
-    image: c2dhunilu/journal-of-digital-history-jupyter
+    image: jupyter/base-notebook
+    user: "1000:1000"
     ports:
-      - 8889:8888
+      - "8888:8888"
     volumes:
-      - ./work:/work
-    working_dir: /work
-    entrypoint: jupyter lab --no-browser --allow-root --ip 0.0.0.0 --port 8888
+      - "C:\\Users\\drbel\\OneDrive\\Documents\\GitHub\\Armada\\work:/work"
+    command: start-notebook.sh --NotebookApp.token=''
+
